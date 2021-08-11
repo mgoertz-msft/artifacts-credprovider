@@ -23,7 +23,7 @@ fi
 echo "Downloading from $URI"
 # Extract netcore from the .tar.gz into the plugin directory
 
-#Fetch the file
+#Fetch the netcore  file
 curl -H "Accept: application/octet-stream" \
      -s \
      -S \
@@ -31,3 +31,12 @@ curl -H "Accept: application/octet-stream" \
      "$URI" | tar xz -C "$HOME/.nuget/" "plugins/netcore"
 
 echo "INFO: credential provider netcore plugin extracted to $HOME/.nuget/"
+
+#Fetch the netfx file
+curl -H "Accept: application/octet-stream" \
+     -s \
+     -S \
+     -L \
+     "$URI" | tar xz -C "$HOME/.nuget/" "plugins/netfx"
+
+echo "INFO: credential provider netfx plugin extracted to $HOME/.nuget/"
